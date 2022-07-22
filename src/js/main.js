@@ -110,15 +110,11 @@ class ControlSystem {
                     salary: this.addpage_input.salary.value.trim(),
                     image: this.addpage_input.image.value.trim(),
                 };
-                if (this.employees) {
-                    if (this.employees.length) {
-                        obj.id = this.employees[this.employees.length - 1].id + 1;
-                    } else {
-                        obj.id = 0;
-                    }
+                if (this.employees.length) {
+                    obj.id = this.employees[this.employees.length - 1].id + 1;
+                } else {
+                    obj.id = 0;
                 }
-
-
                 this.employees.push(obj);
                 localStorage.setItem('employee', JSON.stringify(this.employees));
                 this.resetAddPageValues();
@@ -356,6 +352,20 @@ class ControlSystem {
         this.loadAllCardsFromLocalStorage();
     };
 }
+
+(function firsttime(){
+  if(!localStorage.getItem("employee")){
+    const example = {
+        firstname:"Ali",
+        id:0,
+        image:"none",   
+        position:"Front",
+        salary:1000,
+        secondname:"Aghayev",
+    };
+    localStorage.setItem("employee",JSON.stringify(example));
+  }
+})();
 
 const control_system = new ControlSystem;
 control_system.main();
