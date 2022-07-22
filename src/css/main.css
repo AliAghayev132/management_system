@@ -1,39 +1,57 @@
-@font-face {
-    font-family: "watermelon";
-    src: url(/src/fonts/SEDIFOpersonal.otf);
-}
-
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
 body {
     overflow-x: hidden;
 }
-
-.searchpage {
-    border-radius: 10px;
+/* #region Searchpage,Addpage,editpage,page*/
+.page{
     z-index: 3;
     top: 10%;
+    position: fixed;
+    background-color: #C9C9C9;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all .4s ease-in;
+    padding: 10px;
+    border: 1px solid blue;
+}
+.searchpage {
     left: 0;
     transform: translate(-100%, 0);
-    position: fixed;
-    width: 200px;
-    background-color: #C9C9C9;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid blue;
     border-radius: 0 10px 10px 0;
-    transition: 0.3s ease all;
 }
-
-.searchpage__input {
-    margin-bottom: 10px;
+.addpage {
+    right: 0;
+    border-radius: 10px 0 0 10px;
+    transform: translateX(300px);
+}
+.editpage {
+    top: 0;
+    left: 50%;
+    width:200px;
+    transform: translate(-50%, -100%);
+    border-radius: 10px;
+}
+/* #endregion */
+/* #region page,addpage,searchpage,editpage's inputs */
+.page__input{
+    height: 30px;
+    width: 170px;
+    margin: 10px;
+    padding: 2px 5px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 2px solid rgb(6, 72, 215);
+    outline: none;
+    box-shadow: none;
+}
+.control__input {
     width: 140px;
     height: 30px;
     border: 2px solid rgb(6, 72, 215);
@@ -41,8 +59,10 @@ body {
     box-shadow: none;
     border-radius: 13px;
     padding: 2px 5px;
-    font-size: 15px
-}
+    font-size: 15px;
+}   
+
+/* #endregion */
 
 .searchpage__button {
     background-color: red;
@@ -215,16 +235,7 @@ i {
     justify-content: space-between;
 }
 
-.control__input {
-    width: 140px;
-    height: 30px;
-    border: 2px solid rgb(6, 72, 215);
-    outline: none;
-    box-shadow: none;
-    border-radius: 13px;
-    padding: 2px 5px;
-    font-size: 15px;
-}
+
 
 .control__input:not(:first-child) {
     margin-left: 10px;
@@ -330,21 +341,7 @@ i {
 /* #endregion */
 
 /* #region AddPage */
-.addpage {
-    z-index: 3;
-    display: inline-flex;
-    flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.735);
-    top: 10%;
-    right: 0;
-    position: fixed;
-    border: none;
-    border-radius: 10px 0 0 10px;
-    overflow: hidden;
-    transition: all .5s ease-in;
-    border: 1px solid blue;
-    transform: translateX(300px);
-}
+
 
 .addpage-open {
     transform: translateX(0);
@@ -390,16 +387,6 @@ i {
     background-color: white
 }
 
-.addpage__input {
-    margin: 10px;
-    width: 170px;
-    height: 30px;
-    border: 1px solid aqua;
-    outline: none;
-    box-shadow: none;
-    border-radius: 10px;
-    padding: 2px 5px;
-}
 
 /* #endregion */
 
@@ -414,40 +401,12 @@ i {
 }
 
 /* #region EditPage */
-.editpage {
-    border-radius: 10px;
-    z-index: 3;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -100%);
-    position: fixed;
-    width: 200px;
-    background-color: #C9C9C9;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid blue;
-    border-radius: 10px;
-    transition: 0.3s ease all;
-}
 
 .editpage-open {
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
-.editpage__input {
-    margin-bottom: 10px;
-    width: 140px;
-    height: 30px;
-    border: 2px solid rgb(6, 72, 215);
-    outline: none;
-    box-shadow: none;
-    border-radius: 13px;
-    padding: 2px 5px;
-    font-size: 15px
-}
 
 .editpage__input:focus {
     border-width: 3px;

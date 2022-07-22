@@ -239,8 +239,8 @@ class ControlSystem {
                 </div>
             </div>
             <div class="card__buttons">
-                <button type="button" class = "card__button card__button-delete" title="Sil" id = "del${par.id}"><i class="fa-solid fa-trash-can"></i></button>
-                <button type="button" class = "card__button card__button-edit" title="Yenilə" id = "edit${par.id}"><i class="fa-solid fa-pen-to-square"></i></button>
+                <button type="button" class = "card__button card__button-delete" title="Delete" id = "del${par.id}"><i class="fa-solid fa-trash-can"></i></button>
+                <button type="button" class = "card__button card__button-edit" title="Edit" id = "edit${par.id}"><i class="fa-solid fa-pen-to-square"></i></button>
             </div>
         </div>`
         this.cards.innerHTML += temp;
@@ -331,8 +331,8 @@ class ControlSystem {
     }
     loadAllCardsFromLocalStorage() {
         this.employees = JSON.parse(localStorage.getItem('employee'));
-        for (let i of this.employees) {
-            this.loadCard(i);
+        for (let i in this.employees) {
+            this.loadCard(this.employees[i]);
         }
     };
     resetAddPageValues() {
