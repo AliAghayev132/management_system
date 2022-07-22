@@ -102,15 +102,21 @@ class ControlSystem {
                 this.addpage_input.salary.value &&
                 this.addpage_input.position.value &&
                 this.addpage_input.image.value) {
-
+                
+                    
                 const obj = {
                     firstname: this.addpage_input.firstname.value.trim(),
                     secondname: this.addpage_input.secondname.value.trim(),
                     position: this.addpage_input.position.value.trim(),
                     salary: this.addpage_input.salary.value.trim(),
                     image: this.addpage_input.image.value.trim(),
-                    id: this.employees.length ? this.employees[this.employees.length - 1].id + 1 : 0,
                 };
+                if(this.employees.length){
+                    obj.id = this.employees[this.employees.length-1].id + 1;
+                }else{
+                    obj.id = 0;
+                }
+
                 this.employees.push(obj);
                 localStorage.setItem('employee', JSON.stringify(this.employees));
                 this.resetAddPageValues();
