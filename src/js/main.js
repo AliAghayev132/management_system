@@ -220,6 +220,7 @@ class ControlSystem {
         this.searchpage_button.back = document.getElementById("searchpage__back");
     }
     loadCard(par) {
+        console.log(par);
         let temp = "";
         temp = `
         <div class="card" id = "card${par.id}">
@@ -335,7 +336,9 @@ class ControlSystem {
     }
     loadAllCardsFromLocalStorage() {
         this.employees = JSON.parse(localStorage.getItem('employee'));
+        console.log(this.employees)
         for (let i in this.employees) {
+            console.log(i);
             this.loadCard(this.employees[i]);
         }
     };
@@ -355,14 +358,14 @@ class ControlSystem {
 
 (function firsttime(){
   if(!localStorage.getItem("employee")){
-    const example = {
+    const example = [{
         firstname:"Ali",
         id:0,
         image:"none",   
         position:"Front",
         salary:1000,
         secondname:"Aghayev",
-    };
+    }];
     localStorage.setItem("employee",JSON.stringify(example));
   }
 })();
