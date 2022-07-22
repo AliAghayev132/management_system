@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management System</title>
+    <link rel="stylesheet" href="src/css/main.css">
+    <script src="https://kit.fontawesome.com/fd16f8a5c5.js" crossorigin="anonymous"></script>
+    <meta author="AliAghayev132">
+</head>
+
+<body>
+    <div id="background">
+    </div>
+    <section class="control__section">
+        <div class="control-left">
+            <div class="control__inputs">
+                <input type="text" class="control__input" id="control_firstname" placeholder="Firstname">
+                <input type="text" class="control__input" id="control_secondname" placeholder="Secondname">
+                <input type="text" class="control__input" id="control_position" placeholder="Position">
+                <input type="text" class="control__input" id="control_salary" placeholder="Salary">
+            </div>
+            <div class="control__buttons">
+                <button type="button" id="control_search-responsive"
+                    class="control__button control__button-search-responsive" title="Search"><i
+                        class="fa-solid fa-bars"></i>Search</button>
+                <button type="button" id="control_search" class="control__button control__button-search"
+                    title="Search"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+                <button type="button" id="control_add" class="control__button control__button-add" title="Add"><i
+                        class="fa-solid fa-plus"></i>Add</button>
+                <button type="button" id="control_refresh" class="control__button control__button-refresh"
+                    title="Refresh"><i class="fa-solid fa-arrow-rotate-right"></i>Refresh</button>
+                <button type="button" id="control_delete" class="control__button control__button-delete"
+                    title="Delete"><i class="fa-solid fa-trash-can"></i>Delete all</button>
+            </div>
+        </div>
+
+        <div class="control-right" title="AliAghayev">
+            <span class="control__title">
+                Management System
+            </span>
+            <span class="control__text">V2.0 ©</span>
+        </div>
+    </section>
+    <section class="cards__section">
+        <div class="cards">
+        </div>
+    </section>
+    <section class="addpage__section">
+        <div class="addpage" id="addpage">
+            <input type="text" class="addpage__input" id="addpage_firstname" placeholder="Firstname">
+            <input type="text" class="addpage__input" id="addpage_secondname" placeholder="Secondname">
+            <input type="text" class="addpage__input" id="addpage_position" placeholder="Position">
+            <input type="text" class="addpage__input" id="addpage_salary" placeholder="Salary">
+            <input type="text" class="addpage__input" id="addpage_image" placeholder="Photo">
+            <button type="button" class="addpage__button addpage__button-add" id="addpage_add">Add</button>
+            <button type="button" class="addpage__button addpage__button-back" id="addpage_back">Back</button>
+        </div>
+    </section>
+    <section class="editpage__section">
+        <div class="editpage" id="editpage">
+            <input type="text" class="editpage__input" id="editpage_firstname" placeholder="Firstname">
+            <input type="text" class="editpage__input" id="editpage_secondname" placeholder="Secondname">
+            <input type="text" class="editpage__input" id="editpage_position" placeholder="Position">
+            <input type="text" class="editpage__input" id="editpage_salary" placeholder="Salary">
+            <input type="text" class="editpage__input" id="editpage_image" placeholder="Photo">
+            <button type="button" class="editpage__button editpage__button-add" id="editpage_edit">Done</button>
+            <button type="button" class="editpage__button editpage__button-back" id="editpage_back">Back</button>
+        </div>
+    </section>
+    <section class="searchpage__section">
+        <div class="searchpage" id="searchpage">
+            <input type="text" placeholder="Firstname" class="searchpage__input" id="search_firstname">
+            <input type="text" placeholder="Secondname" class="searchpage__input" id="search_secondname">
+            <input type="text" placeholder="Position" class="searchpage__input" id="search_position">
+            <input type="text" placeholder="Salary" class="searchpage__input" id="search_salary">
+            <button type="button" id="searchpage__search"
+                class="searchpage__button searchpage__button-search">Search</button>
+            <button type="button" id="searchpage__back" class="searchpage__button searchpage__button-back">Back</button>
+        </div>
+    </section>
+    <script src="src/js//main.js"></script>
+</body>
+
+</html>

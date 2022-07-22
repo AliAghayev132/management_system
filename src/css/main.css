@@ -1,0 +1,564 @@
+@font-face {
+    font-family: "watermelon";
+    src: url(/src/fonts/SEDIFOpersonal.otf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.searchpage {
+    border-radius: 10px;
+    z-index: 3;
+    top: 10%;
+    left: 0;
+    transform: translate(-100%, 0);
+    position: fixed;
+    width: 200px;
+    background-color: #C9C9C9;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid blue;
+    border-radius: 0 10px 10px 0;
+    transition: 0.3s ease all;
+}
+
+.searchpage__input {
+    margin-bottom: 10px;
+    width: 140px;
+    height: 30px;
+    border: 2px solid rgb(6, 72, 215);
+    outline: none;
+    box-shadow: none;
+    border-radius: 13px;
+    padding: 2px 5px;
+    font-size: 15px
+}
+
+.searchpage__button {
+    background-color: red;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px 0;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    width: 100px;
+    transition: all .3s ease;
+    color: white;
+}
+
+.searchpage__button:nth-child(odd) {
+    margin-bottom: 10px;
+    background-color: rgb(0, 162, 255);
+}
+
+.searchpage__input:focus {
+    border-width: 3px;
+    transition: 0.3s ease all;
+    animation: border-animation 1s ease infinite alternate-reverse;
+
+}
+
+
+
+/* #region Cards */
+.card__image {
+    width: 225px;
+    height: 225px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 15px;
+}
+
+.control__background {
+    background-color: white;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-bottom: 5px solid black;
+    padding: 60px 0 10px 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+.disablescroll {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar-track {
+    background: #bced6e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(10, 219, 238);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(223, 8, 8);
+}
+
+.card {
+    margin: 20px 12px;
+    padding: 20px;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 30px;
+    transition: 0.3s ease all;
+}
+
+.card__field {
+    cursor: default;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.card__field:hover {
+    transition: 0.3s ease all;
+    border-bottom: 1px solid blue;
+}
+
+.card__field span:first-child {
+    display: inline-block;
+    width: 40px;
+}
+
+.card__field span:last-child {
+    margin-left: 25%;
+}
+
+.card__buttons {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+i {
+    pointer-events: none;
+    color: white;
+}
+
+.card:hover {
+    transform: scale(1.05, 1.05);
+    transition: 0.3s ease all;
+    border-color: rgb(143, 101, 188);
+    box-shadow: 0 0 30px 8px rgba(180, 176, 176, 0.846);
+}
+
+.card__button {
+    cursor: pointer;
+    background-color: rgb(0, 162, 255);
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    width: 100px;
+    justify-content: center;
+    transition: all .3s ease;
+    color: white;
+}
+
+.card__button {
+    width: 40%;
+}
+
+.card__button:last-child {
+    background-color: rgb(14, 235, 191);
+}
+
+.card__button:first-child {
+    background-color: red;
+}
+
+.card__button:last-child:hover {
+    border: 1px solid rgb(14, 235, 191);
+    background-color: transparent;
+}
+
+.card__button:first-child:hover {
+    border: 1px solid red;
+    background-color: transparent;
+}
+
+.card__button:hover i,
+.card__button:hover {
+    color: black;
+}
+
+/* #endregion */
+
+/* #region Control Section */
+.control__section {
+    z-index: 2;
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    padding: 10px;
+    border-bottom: 5px solid black;
+    justify-content: space-between;
+}
+
+.control__input {
+    width: 140px;
+    height: 30px;
+    border: 2px solid rgb(6, 72, 215);
+    outline: none;
+    box-shadow: none;
+    border-radius: 13px;
+    padding: 2px 5px;
+    font-size: 15px;
+}
+
+.control__input:not(:first-child) {
+    margin-left: 10px;
+}
+
+.control__input:focus,
+.addpage__input:focus,
+.addpage__input:focus {
+    border-width: 3px;
+    transition: 0.3s ease all;
+    animation: border-animation 1s ease infinite alternate-reverse;
+}
+
+@keyframes border-animation {
+    0% {
+        border-color: rgb(30, 252, 82);
+    }
+
+    100% {
+        border-color: red;
+    }
+}
+
+.control__button i {
+    margin-right: 7px;
+}
+
+.control-left {
+    display: flex;
+}
+
+.control__button {
+    margin-left: 5px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: rgb(51, 207, 75);
+    padding: 5px 0;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    min-width: 90px;
+    transition: all .3s ease;
+    color: white;
+}
+
+.control__button-search {
+    margin-left: 20px;
+    background-color: rgb(14, 66, 235);
+}
+
+.control__button-refresh {
+    background-color: rgb(255, 199, 16);
+}
+
+.control__button-delete {
+    background-color: red;
+}
+
+.control-right {
+    display: flex;
+}
+
+.control__text {
+    margin: 7px 0 0 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}
+
+.control__button:hover {
+    transform: scale(1.1, 1.1);
+    color: black;
+    transition: 0.3s ease all;
+    background-color: transparent;
+
+}
+
+.control__button:hover i {
+    color: black;
+    transition: 0.3s ease all;
+}
+
+.control__button-search:hover {
+    border: 1px solid rgb(14, 66, 235);
+}
+
+.control__button-add:hover {
+    border: 1px solid rgb(51, 207, 75);
+}
+
+.control__button-refresh:hover {
+    border: 1px solid rgb(255, 199, 16);
+}
+
+.control__button-delete:hover {
+    border: 1px solid red;
+}
+
+.control__title {
+    margin-top: -3px;
+    font-size: 30px;
+}
+
+/* #endregion */
+
+/* #region AddPage */
+.addpage {
+    z-index: 3;
+    display: inline-flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.735);
+    top: 10%;
+    right: 0;
+    position: fixed;
+    border: none;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+    transition: all .5s ease-in;
+    border: 1px solid blue;
+    transform: translateX(300px);
+}
+
+.addpage-open {
+    transform: translateX(0);
+}
+
+.addpage__input {
+    margin-bottom: 10px;
+}
+
+.addpage__input:focus {
+    border-width: 2px;
+    transition: 0.3s ease all;
+    border-color: red;
+}
+
+.addpage__button {
+    margin: 10px;
+    background-color: rgb(14, 66, 235);
+    width: 170px;
+    cursor: pointer;
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    transition: all .5s ease;
+    color: white;
+}
+
+.addpage__button:hover,
+.searchpage__button-search:hover {
+    border-color: rgb(0, 162, 255);
+    background-color: white;
+    color: rgb(0, 162, 255);
+}
+
+.addpage__button-back {
+    background-color: red;
+}
+
+.addpage__button-back:hover,
+.searchpage__button-back:hover {
+    border-color: red;
+    color: red;
+    background-color: white
+}
+
+.addpage__input {
+    margin: 10px;
+    width: 170px;
+    height: 30px;
+    border: 1px solid aqua;
+    outline: none;
+    box-shadow: none;
+    border-radius: 10px;
+    padding: 2px 5px;
+}
+
+/* #endregion */
+
+/* #Background */
+.blackbackground {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 3;
+}
+
+/* #region EditPage */
+.editpage {
+    border-radius: 10px;
+    z-index: 3;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    position: fixed;
+    width: 200px;
+    background-color: #C9C9C9;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid blue;
+    border-radius: 10px;
+    transition: 0.3s ease all;
+}
+
+.editpage-open {
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.editpage__input {
+    margin-bottom: 10px;
+    width: 140px;
+    height: 30px;
+    border: 2px solid rgb(6, 72, 215);
+    outline: none;
+    box-shadow: none;
+    border-radius: 13px;
+    padding: 2px 5px;
+    font-size: 15px
+}
+
+.editpage__input:focus {
+    border-width: 3px;
+    transition: 0.3s ease all;
+    animation: border-animation 1s ease infinite alternate-reverse;
+}
+
+.editpage__button:nth-child(even) {
+    background-color: rgb(51, 207, 75);
+    margin-bottom: 20px;
+}
+
+.editpage__button {
+    background-color: red;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px 0;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    width: 100px;
+    transition: all .3s ease;
+    color: white;
+}
+
+.control__button-search-responsive {
+    display: none;
+    background-color: rgb(14, 66, 235);
+}
+
+.control__button-search-responsive:hover {
+    border-color: rgb(14, 66, 235);
+}
+
+/* #endregion */
+
+@media only screen and (max-width: 1355px) {
+    .control__text {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1275px) {
+    .control-right {
+        display: none;
+    }
+
+    .control-left {
+        justify-content: space-between;
+    }
+
+    .control__section {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 1040px) {
+    .control-left {
+        justify-content: flex-start;
+    }
+
+    .control__button-search {
+        margin: 0;
+    }
+
+    .control-right {
+        display: flex;
+    }
+
+    .control__text {
+        display: flex;
+    }
+
+    .control__section {
+        flex-direction: row;
+    }
+
+    .control__input {
+        display: none;
+    }
+
+    .control__button-search {
+        display: none;
+    }
+
+    .control__button-search-responsive {
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .control__section {
+        justify-content: center
+    }
+
+    .control-right {
+        display: none;
+    }
+
+    .control-left {
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .control__button {
+        min-width: 80px;
+    }
+
+    .control__section {
+        padding: 10px 5px;
+    }
+}
