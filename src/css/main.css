@@ -4,11 +4,13 @@
     box-sizing: border-box;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+
 body {
     overflow-x: hidden;
 }
-/* #region Searchpage,Addpage,editpage,page*/
-.page{
+
+/* #region Page*/
+.page {
     z-index: 3;
     top: 10%;
     position: fixed;
@@ -21,26 +23,7 @@ body {
     padding: 10px;
     border: 1px solid blue;
 }
-.searchpage {
-    left: 0;
-    transform: translate(-100%, 0);
-    border-radius: 0 10px 10px 0;
-}
-.addpage {
-    right: 0;
-    border-radius: 10px 0 0 10px;
-    transform: translateX(300px);
-}
-.editpage {
-    top: 0;
-    left: 50%;
-    width:200px;
-    transform: translate(-50%, -100%);
-    border-radius: 10px;
-}
-/* #endregion */
-/* #region page,addpage,searchpage,editpage's inputs */
-.page__input{
+.page__input {
     height: 30px;
     width: 170px;
     margin: 10px;
@@ -51,46 +34,20 @@ body {
     outline: none;
     box-shadow: none;
 }
-.control__input {
-    width: 140px;
-    height: 30px;
-    border: 2px solid rgb(6, 72, 215);
-    outline: none;
-    box-shadow: none;
-    border-radius: 13px;
-    padding: 2px 5px;
-    font-size: 15px;
-}   
-
-/* #endregion */
-
-.searchpage__button {
-    background-color: red;
-    text-align: center;
-    font-size: 15px;
+.page__button {
     cursor: pointer;
-    padding: 5px 0;
     border: 1px solid transparent;
-    border-radius: 9px;
-    width: 100px;
     transition: all .3s ease;
     color: white;
-}
-
-.searchpage__button:nth-child(odd) {
-    margin-bottom: 10px;
-    background-color: rgb(0, 162, 255);
-}
-
-.searchpage__input:focus {
-    border-width: 3px;
-    transition: 0.3s ease all;
-    animation: border-animation 1s ease infinite alternate-reverse;
+    border-radius: 9px;
+    font-size: 15px;
+    width: 170px;
+    text-align: center;
 
 }
 
 
-
+/* #endregion */
 /* #region Cards */
 .card__image {
     width: 225px;
@@ -222,8 +179,31 @@ i {
 }
 
 /* #endregion */
-
 /* #region Control Section */
+.control__button {
+    margin-left: 5px;
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: rgb(51, 207, 75);
+    padding: 5px 0;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    min-width: 90px;
+    transition: all .3s ease;
+    color: white;
+}
+
+.control__input {
+    width: 140px;
+    height: 30px;
+    border: 2px solid rgb(6, 72, 215);
+    outline: none;
+    box-shadow: none;
+    border-radius: 13px;
+    padding: 2px 5px;
+    font-size: 15px;
+}
 .control__section {
     z-index: 2;
     background-color: white;
@@ -235,15 +215,20 @@ i {
     justify-content: space-between;
 }
 
-
-
 .control__input:not(:first-child) {
     margin-left: 10px;
 }
+.control__button-search-responsive {
+    display: none;
+    background-color: rgb(14, 66, 235);
+}
+
+.control__button-search-responsive:hover {
+    border-color: rgb(14, 66, 235);
+}
 
 .control__input:focus,
-.addpage__input:focus,
-.addpage__input:focus {
+.addpage__input:focus{
     border-width: 3px;
     transition: 0.3s ease all;
     animation: border-animation 1s ease infinite alternate-reverse;
@@ -267,19 +252,7 @@ i {
     display: flex;
 }
 
-.control__button {
-    margin-left: 5px;
-    text-align: center;
-    font-size: 15px;
-    cursor: pointer;
-    background-color: rgb(51, 207, 75);
-    padding: 5px 0;
-    border: 1px solid transparent;
-    border-radius: 9px;
-    min-width: 90px;
-    transition: all .3s ease;
-    color: white;
-}
+
 
 .control__button-search {
     margin-left: 20px;
@@ -339,10 +312,17 @@ i {
 }
 
 /* #endregion */
-
 /* #region AddPage */
-
-
+.addpage__button {
+    margin: 10px;
+    background-color: rgb(14, 66, 235);
+    padding: 5px;
+}
+.addpage {
+    right: 0;
+    border-radius: 10px 0 0 10px;
+    transform: translateX(300px);
+}
 .addpage-open {
     transform: translateX(0);
 }
@@ -357,23 +337,11 @@ i {
     border-color: red;
 }
 
-.addpage__button {
-    margin: 10px;
-    background-color: rgb(14, 66, 235);
-    width: 170px;
-    cursor: pointer;
-    padding: 5px;
-    border: 1px solid transparent;
-    border-radius: 7px;
-    transition: all .5s ease;
-    color: white;
-}
-
 .addpage__button:hover,
 .searchpage__button-search:hover {
     border-color: rgb(0, 162, 255);
     background-color: white;
-    color: rgb(0, 162, 255);
+    color: black;
 }
 
 .addpage__button-back {
@@ -383,14 +351,13 @@ i {
 .addpage__button-back:hover,
 .searchpage__button-back:hover {
     border-color: red;
-    color: red;
+    color: black;
     background-color: white
 }
 
 
 /* #endregion */
-
-/* #Background */
+/* #region Background */
 .blackbackground {
     position: fixed;
     width: 100%;
@@ -399,51 +366,70 @@ i {
     opacity: 0.8;
     z-index: 3;
 }
-
+/* #endregion */
 /* #region EditPage */
+.editpage__button {
+    background-color: red;
+    padding: 5px 0;
+}
+
+.editpage {
+    top: 0;
+    left: 50%;
+    width: 200px;
+    transform: translate(-50%, -100%);
+    border-radius: 10px;
+}
 
 .editpage-open {
     top: 50%;
     transform: translate(-50%, -50%);
 }
-
-
 .editpage__input:focus {
     border-width: 3px;
     transition: 0.3s ease all;
     animation: border-animation 1s ease infinite alternate-reverse;
 }
-
-.editpage__button:nth-child(even) {
+.editpage__button-edit {
     background-color: rgb(51, 207, 75);
     margin-bottom: 20px;
 }
-
-.editpage__button {
-    background-color: red;
-    text-align: center;
-    font-size: 15px;
-    cursor: pointer;
-    padding: 5px 0;
-    border: 1px solid transparent;
-    border-radius: 9px;
-    width: 100px;
-    transition: all .3s ease;
-    color: white;
+.editpage__button-edit:hover{
+    border-color: rgb(51, 207, 75);
+    background-color: white;
+    color: black;
 }
 
-.control__button-search-responsive {
-    display: none;
-    background-color: rgb(14, 66, 235);
-}
-
-.control__button-search-responsive:hover {
-    border-color: rgb(14, 66, 235);
-}
 
 /* #endregion */
+/* #region Search */
 
+.searchpage__button {
+    background-color: red;
+    padding: 5px 0;
+}
+
+
+.searchpage__button:nth-child(odd) {
+    margin-bottom: 10px;
+    background-color: rgb(0, 162, 255);
+}
+
+.searchpage {
+    left: 0;
+    transform: translate(-100%, 0);
+    border-radius: 0 10px 10px 0;
+}
+.searchpage__input:focus {
+    border-width: 3px;
+    transition: 0.3s ease all;
+    animation: border-animation 1s ease infinite alternate-reverse;
+
+}
+/* #endregion */
+/* #region Responsive */
 @media only screen and (max-width: 1355px) {
+
     .control__text {
         display: none;
     }
@@ -521,3 +507,4 @@ i {
         padding: 10px 5px;
     }
 }
+/* #endregion */

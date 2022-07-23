@@ -64,7 +64,7 @@ class ControlSystem {
                         newJson.push(this.employees[i]);
                 }
                 this.employees = newJson;
-                this.refreshCards();
+                this.searchCard();
             }
             if (temp.classList.contains("card__button-edit")) {
                 for (let i = 0; i < this.employees.length; ++i) {
@@ -361,11 +361,18 @@ class ControlSystem {
     const example = [{
         firstname:"Ali",
         id:0,
-        image:"none",   
+        image:"https://assets2.rockpapershotgun.com/the-witcher-3-best-rpgs.jpg/BROK/thumbnail/1600x900/quality/100/the-witcher-3-best-rpgs.jpg",   
         position:"Front",
-        salary:1000,
+        salary:100,
         secondname:"Aghayev",
-    }];
+    },{
+        firstname:"Elon",
+        id:1,
+        image:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg",   
+        position:"CEO",
+        salary:1000,
+        secondname:"Musk",
+    },];    
     localStorage.setItem("employee",JSON.stringify(example));
   }
 })();
