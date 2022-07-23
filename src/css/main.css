@@ -45,9 +45,7 @@ body {
     text-align: center;
 
 }
-.addpage-open{
-    transform: translateX(0);
-}
+
 
 
 /* #endregion */
@@ -327,7 +325,9 @@ i {
     transform: translateX(300px);
 }
 
-
+.addpage-open{
+    transform: translateX(0);
+}
 .addpage__input {
     margin-bottom: 10px;
 }
