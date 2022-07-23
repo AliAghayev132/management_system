@@ -64,7 +64,9 @@ class ControlSystem {
                         newJson.push(this.employees[i]);
                 }
                 this.employees = newJson;
-                this.searchCard();
+                localStorage.setItem("employee", JSON.stringify(this.employees));
+
+
             }
             if (temp.classList.contains("card__button-edit")) {
                 for (let i = 0; i < this.employees.length; ++i) {
@@ -288,7 +290,6 @@ class ControlSystem {
         this.loadAllCardsFromLocalStorage();
     }
     searchCard(par = this.control_input) {
-        console.log(par);
         if (par.firstname.value ||
             par.secondname.value ||
             par.position.value ||
