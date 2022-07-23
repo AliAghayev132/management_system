@@ -84,7 +84,7 @@ class ControlSystem {
             this.searchCard();
         });
         this.control_button.search_responsive.addEventListener('click', () => {
-            this.page.search.classList.toggle("addpage-open");
+            this.page.search.classList.toggle("searchpage-open");
             this.page.background.classList.toggle('blackbackground');
             this.lockBody();
         })
@@ -145,7 +145,7 @@ class ControlSystem {
             }, 550);
         });
         this.searchpage_button.back.addEventListener('click', () => {
-            this.page.search.classList.toggle("addpage-open");
+            this.page.search.classList.toggle("searchpage-open");
             setTimeout(() => {
                 this.lockBody();
                 this.page.background.classList.toggle('blackbackground')
@@ -220,7 +220,6 @@ class ControlSystem {
         this.searchpage_button.back = document.getElementById("searchpage__back");
     }
     loadCard(par) {
-        console.log(par);
         let temp = "";
         temp = `
         <div class="card" id = "card${par.id}">
@@ -336,9 +335,7 @@ class ControlSystem {
     }
     loadAllCardsFromLocalStorage() {
         this.employees = JSON.parse(localStorage.getItem('employee'));
-        console.log(this.employees)
         for (let i in this.employees) {
-            console.log(i);
             this.loadCard(this.employees[i]);
         }
     };
@@ -356,25 +353,25 @@ class ControlSystem {
     };
 }
 
-(function firsttime(){
-  if(!localStorage.getItem("employee")){
-    const example = [{
-        firstname:"Ali",
-        id:0,
-        image:"https://assets2.rockpapershotgun.com/the-witcher-3-best-rpgs.jpg/BROK/thumbnail/1600x900/quality/100/the-witcher-3-best-rpgs.jpg",   
-        position:"Front",
-        salary:100,
-        secondname:"Aghayev",
-    },{
-        firstname:"Elon",
-        id:1,
-        image:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg",   
-        position:"CEO",
-        salary:1000,
-        secondname:"Musk",
-    },];    
-    localStorage.setItem("employee",JSON.stringify(example));
-  }
+(function firsttime() {
+    if (!localStorage.getItem("employee")) {
+        const example = [{
+            firstname: "Ali",
+            id: 0,
+            image: "https://assets2.rockpapershotgun.com/the-witcher-3-best-rpgs.jpg/BROK/thumbnail/1600x900/quality/100/the-witcher-3-best-rpgs.jpg",
+            position: "Front",
+            salary: 100,
+            secondname: "Aghayev",
+        }, {
+            firstname: "Elon",
+            id: 1,
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg",
+            position: "CEO",
+            salary: 1000,
+            secondname: "Musk",
+        }, ];
+        localStorage.setItem("employee", JSON.stringify(example));
+    }
 })();
 
 const control_system = new ControlSystem;

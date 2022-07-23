@@ -45,6 +45,9 @@ body {
     text-align: center;
 
 }
+.addpage-open{
+    transform: translateX(0);
+}
 
 
 /* #endregion */
@@ -323,9 +326,7 @@ i {
     border-radius: 10px 0 0 10px;
     transform: translateX(300px);
 }
-.addpage-open {
-    transform: translateX(0);
-}
+
 
 .addpage__input {
     margin-bottom: 10px;
@@ -418,8 +419,11 @@ i {
 
 .searchpage {
     left: 0;
-    transform: translate(-100%, 0);
+    transform: translateX(-100%);
     border-radius: 0 10px 10px 0;
+}
+.searchpage-open{
+    transform: translateX(0);
 }
 .searchpage__input:focus {
     border-width: 3px;
