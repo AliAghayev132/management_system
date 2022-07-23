@@ -349,7 +349,8 @@ i {
 }
 
 .addpage__button-back:hover,
-.searchpage__button-back:hover {
+.searchpage__button-back:hover,
+.editpage__button-back:hover{
     border-color: red;
     color: black;
     background-color: white
