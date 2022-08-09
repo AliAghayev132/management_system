@@ -64,8 +64,8 @@ class ControlSystem {
                         newJson.push(this.employees[i]);
                 }
                 this.employees = newJson;
+                temp.parentNode.parentNode.remove();        
                 localStorage.setItem("employee", JSON.stringify(this.employees));
-
 
             }
             if (temp.classList.contains("card__button-edit")) {
